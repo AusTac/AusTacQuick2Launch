@@ -8,10 +8,21 @@ Windows desktop application for launching selected mods & paramters for the Arma
 
 - Varoius parameter selections including IP & Port as well as password
 - Sync mod selection(s) with Play withSix
+- Fetch Mod data from [ausTac] Sync - http://sync.austac.net.au
 - Application Auto Update
 - SaveTo Recent Launch Lists (WIP)
 - Import (via array or url) & Launch
 - Logging & Debugging
+
+
+# Buit With
+
+- c#
+- WPF
+- Visual Studio
+- FirstFloor.ModernUI
+- Hardcodet.Wpf.TaskbarNotification
+- Ookii.Dialogs.Wpf
 
 
 # Screenshots
