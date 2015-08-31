@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="AusTacQuick2Launch.Content.FeedbackForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="437" d:DesignWidth="647">
+    <Grid Style="{StaticResource ContentRoot}" Margin="16,-2,16,16">
+        <DockPanel x:Name="panelhide" Panel.ZIndex="99">
+            <ProgressBar HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" IsIndeterminate="True" Foreground="#FFFB0101" BorderBrush="#FFFF0202" />
+        </DockPanel>
+        <DockPanel x:Name="submitted" Panel.ZIndex="99" Visibility="Hidden">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="79,0,0,0">
+            <Image Width="20" Height="15" HorizontalAlignment="Left" Source="/[AusTac] Quick2Launch;component/Assets/tick 1.png" Margin="0" />
+            <Label Foreground="#FFC6FF04" Content="Feedback Submitted!" HorizontalAlignment="Left" Margin="27,-15,0,0" Width="160" />
+            </StackPanel>
+        </DockPanel>
+        <ScrollViewer>
+            <StackPanel x:Name="Form" MinWidth="200">
+                <TextBlock Text="Add Feedback" Style="{StaticResource Heading2}" Margin="0,0,0,-7" Height="33" />
+                <Separator Margin="0,2,0,21" />
+                <TextBlock Text="Complete the form below and provide any feedback for the developers" Width="614" Margin="0,1,0,0" />
+                <TextBox x:Name="name" Width="171" HorizontalAlignment="Left" Margin="0,18,0,0" />
+                <TextBox x:Name="id" Width="0" HorizontalAlignment="Left" Margin="0,18,0,0" Height="0" />
+                <TextBlock Text="Name (Required)" Width="87" FontSize="10" HorizontalAlignment="Left" Margin="0,-24,0,0" Height="13" />
+                <TextBox x:Name="email" Width="171" HorizontalAlignment="Left" Margin="0,6,0,0" BorderThickness="1" />
+                <TextBlock Text="Email" Width="87" FontSize="10" HorizontalAlignment="Left" />
+                <TextBox x:Name="description" Width="382" HorizontalAlignment="Left" Margin="0,18,0,0" Height="116" />
+                <TextBlock Text="Feedback Details (Required)" Width="138" FontSize="10" HorizontalAlignment="Left" />
+                <Button x:Name="Send" ToolTip="Send Feedback" Width="70" Height="25" HorizontalAlignment="Left" Margin="0,25,0,0" Cursor="Hand" Content="Send" Click="Send_Click" />
+                <Button x:Name="Reset" ToolTip="Reset Form" Width="70" Height="25" HorizontalAlignment="Left" Margin="78,-25,0,0" Cursor="Hand" Content="Reset" Background="White" Foreground="#FF686666" Click="Reset_Click" />
+                <Border x:Name="MessageBorder" Height="34" Margin="0,10,0,0" BorderThickness="5,0,0,0" BorderBrush="#FFFDE200" Visibility="Hidden">
+                    <DockPanel x:Name="MessageAction" Width="554"  HorizontalAlignment="Left" Margin="0,-11,0,-9" Background="Transparent">
+                        <Image Width="15" Source="Assets/184-warning.png" Margin="7,0,0,0"   />
+                        <TextBlock Foreground="#FFFDE200" x:Name="MessageActionRequest" Text="Please fill out required fields." Height="15" HorizontalAlignment="Left" Width="567" Background="{x:Null}" Margin="6,5,0,5"/>
+                    </DockPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

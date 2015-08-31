@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="AusTacQuick2Launch.Content.Arma2Recent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="442" d:DesignWidth="520">
+    <Grid Style="{StaticResource ContentRoot}" Margin="16,-2,16,16">
+        <StackPanel MinWidth="200" Margin="0,0,0,366">
+            <TextBlock Text="Recent Arma 2 Launches" Style="{StaticResource Heading2}" />
+        </StackPanel>
+        <DockPanel x:Name="panelhide" Panel.ZIndex="99">
+            <ProgressBar HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" IsIndeterminate="True" Foreground="#FFFB0101" BorderBrush="#FFFF0202" />
+        </DockPanel>
+        <DockPanel x:Name="panelnofile" Panel.ZIndex="98">
+            <!--<TextBlock Text="No Arma 2 Folder Set or Found. Please edit your paths in the settings page" Width="572" Margin="0,0,0,0" VerticalAlignment="Center" />-->
+            <mui:BBCodeBlock BBCode="No Arma 2 Recent saved yet." Width="150" Margin="0,192,0,190" VerticalAlignment="Center" Foreground="#FFFBF8F8" />
+        </DockPanel>
+        <DockPanel x:Name="ModsListPanel" Visibility="Hidden" Margin="0,15,0,0">
+            <ListBox ItemsSource="{Binding Arma2RecentList}" Name="Arma2RecentListbox" BorderThickness="0,1" Margin="0,10" BorderBrush="#FF3C3C3C">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Tag="{Binding IsSelected}"  Text="{Binding TheText}" Cursor="Hand"></TextBlock>
+                    </DataTemplate>
+
+                </ListBox.ItemTemplate>
+
+            </ListBox>
+        </DockPanel>
+    </Grid>
+</UserControl>

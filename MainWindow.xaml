@@ -1,0 +1,44 @@
+﻿<mui:ModernWindow x:Class="AusTacQuick2Launch.MainWindow"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+                  Title="[AusTac] Quick2Launch (Alpha 0.0.0.1)"
+                  BorderThickness="1"
+                  IsTitleVisible="True"
+                  MinHeight="580"
+                  MaxHeight="580"
+                  Height="580"
+                  MinWidth="980"
+                  MaxWidth="980"
+                  Width="980"
+                  ShowInTaskbar="True"
+                  WindowStartupLocation="CenterScreen"
+                  Style="{StaticResource BlankWindow}" 
+                  Loaded="MainWindow_Loaded">
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid Style="{StaticResource ContentRoot}">
+        <mui:ModernTab x:Name="NavigationTabs" SelectedSource="/Content/Arma2Launcher.xaml" Layout="List">
+            <mui:ModernTab.Links>
+                <mui:Link DisplayName="Launch Arma 2" Source="/Content/Arma2Launcher.xaml" />
+                <mui:Link DisplayName="Launch Arma 3" Source="/Content/Arma3Launcher.xaml" />
+                <mui:Link DisplayName="Recent" Source="/Content/Recent.xaml" />
+                <mui:Link DisplayName="Import" Source="/Content/ImportExport.xaml" />
+                <mui:Link DisplayName="Settings" Source="/Content/Settings.xaml" />
+                <mui:Link DisplayName="Debug" Source="/Content/Debug.xaml" />
+                <mui:Link DisplayName="Help" Source="/Content/Help.xaml" />
+                <mui:Link DisplayName="About" Source="/Content/About.xaml" />
+            </mui:ModernTab.Links>
+        </mui:ModernTab>
+        <StatusBar x:Name="mainStatus" Height="24" VerticalAlignment="Bottom" Panel.ZIndex="999999" BorderThickness="0,1,0,0" BorderBrush="#FF474747" Background="Transparent" Margin="0,0,0,-23">
+            <StackPanel x:Name="RestartAction" Height="25" Width="900" Visibility="Hidden">
+                <Image x:Name="RestartActionImage" Width="12" Height="11" Source="Assets/184-warning.png" HorizontalAlignment="Left" Margin="0,1,0,0" />
+                <TextBlock x:Name="RestartActionRequest" Height="15" HorizontalAlignment="Left" Width="700" Margin="16,-11,0,0" Background="{x:Null}" Text="Restart is Required to Update the Launcher" FontSize="8" FontWeight="Bold" Foreground="#FFFDE200" Cursor="Hand" ToolTip="Click here to restart Application is required as Data has changed or saved and the app needs a system refresh" MouseDown="RestartActionRequest_MouseDown"/>
+            </StackPanel>
+            
+        </StatusBar>
+    </Grid>
+
+</mui:ModernWindow>

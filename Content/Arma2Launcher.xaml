@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="AusTacQuick2Launch.Content.Arma2Launcher"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d"
+             d:DesignHeight="596" d:DesignWidth="889">
+
+    <Grid Style="{StaticResource ContentRoot}">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MaxWidth="200" MinWidth="200"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Height="377" Width="195" Margin="-13,0,0,0">
+
+            <TextBlock Text="Launch Settings" Style="{StaticResource Heading2}" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <CheckBox x:Name="launch_setting_nosplash" IsChecked="False" Cursor="Hand" ToolTip="Disables splash screens"  HorizontalAlignment="Left" VerticalAlignment="Top" Content="No Splash Screen" Width="138" Margin="0,22,0,0" />
+            <CheckBox x:Name="launch_setting_scripterrors" IsChecked="False" Cursor="Hand" ToolTip="Show errors in scripts on-screen" Content="Show Script Errors" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,44,0,0" />
+            <CheckBox x:Name="launch_setting_intro" IsChecked="False" Cursor="Hand" ToolTip="Disables world intros in the main menu" Content="No Intro" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,66,0,0" />
+            <CheckBox x:Name="launch_setting_nopause" IsChecked="False" Cursor="Hand" ToolTip="Allow the game running even when its window does not have focus (i.e. running in the background) " Content="No Pause" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,88,0,0" />
+            <Separator Margin="0,105,0,250" Background="#FF3C3C3C"/>
+
+            <Separator Margin="0,218,0,149" Background="#FF3C3C3C"/>
+            <TextBlock Text="Connect" Margin="2,120,73,244" Style="{StaticResource Heading2}" FontSize="12" />
+            <TextBox x:Name="ip_address" Width="120" Margin="2,138,73,215" />
+            <TextBlock Text="IP Address" Margin="2,162,143,202" Style="{StaticResource Heading2}" FontSize="8" />
+            <TextBlock Text=":" Margin="127,136,63,217"  FontSize="18" />
+            <TextBox x:Name="port_address" Margin="137,138,10,215" />
+            <TextBlock Text="Port" Margin="137,162,29,202" Style="{StaticResource Heading2}" FontSize="8" />
+            <PasswordBox x:Name="password" Margin="2,180,10,173" />
+            <TextBlock Text="Password" Margin="2,205,143,159" Style="{StaticResource Heading2}" FontSize="8" />
+
+            <CheckBox x:Name="launch_setting_allowrecent" IsChecked="False" Cursor="Hand" ToolTip="Save current Launch Params and Selected Mods to Recent List after launch" Content="Save to Recent" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,233,0,0" />
+            <Separator Margin="0,249,0,107" Background="#FF3C3C3C"/>
+            <TextBlock Text="After Launch" Margin="0,270,10,89" Style="{StaticResource Heading2}" FontSize="12" />
+            <RadioButton Content="Minimize to Tray"  GroupName="AfterLaunchSelect" Height="24" HorizontalAlignment="Left"  Name="AfterLaunchMinimizeselected" VerticalAlignment="Top" Width="140" Cursor="Hand" ToolTip="Minimize Application after Launch" Margin="0,288,0,0" IsChecked="True" />
+            <RadioButton Content="Close Application" GroupName="AfterLaunchSelect" Height="22" HorizontalAlignment="Left"  Name="AfterLaunchCloseselected" VerticalAlignment="Top" Width="136" Cursor="Hand" ToolTip="Close Application after Launch" Margin="0,312,0,0" />
+            <Separator Margin="0,339,0,8" Background="#FF3C3C3C"/>
+
+            <Button x:Name="pw6" Height="25" Margin="10,365,8,-13" Foreground="White" Cursor="Hand" Content="Check with Play withSix" IsCancel="True" ToolTip="Add selected mods to Play withSix to check for updates, diagnostics etc" BorderBrush="#FF008AFD" Background="#FF015CFB" Click="pw6_Click"/>
+            <ProgressBar x:Name="pw6_loading" Height="25" Margin="10,365,8,-13" IsIndeterminate="True" Background="#00000000" Foreground="#FF0146FD" Visibility="Hidden"/>
+            <Separator Margin="0,390,0,-41" Background="#FF3C3C3C"/>
+            <ScrollViewer MinHeight="0" Height="160" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="Hidden">
+                <ListBox x:Name="ModsListBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="0"/>
+            </ScrollViewer>
+        </Grid>
+        <GridSplitter Grid.Column="1" Background="#FF464646" />
+        <Grid Grid.Column="6" Margin="{StaticResource SplitRight}" >
+            <DockPanel x:Name="panelclosing" Panel.ZIndex="99" Visibility="Hidden">
+                <mui:BBCodeBlock BBCode="Shutting Down Application.." Width="258" Margin="81,160,0,211" VerticalAlignment="Center" Foreground="#FFFBF8F8" HorizontalAlignment="Center" TextAlignment="Center" />
+                <ProgressBar HorizontalAlignment="Center" VerticalAlignment="Center" Width="136" IsIndeterminate="True" Foreground="#FFFB0101" BorderBrush="#FFFF0202" Margin="-420,192,0,191" />
+            </DockPanel>
+            <DockPanel x:Name="panelhide" Panel.ZIndex="99">
+                <ProgressBar HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" IsIndeterminate="True" Foreground="#FFFB0101" BorderBrush="#FFFF0202" />
+            </DockPanel>
+            <DockPanel x:Name="panelnofile" Panel.ZIndex="98">
+                <!--<TextBlock Text="No Arma 2 Folder Set or Found. Please edit your paths in the settings page" Width="572" Margin="0,0,0,0" VerticalAlignment="Center" />-->
+                <mui:BBCodeBlock BBCode="Arma 2 Folder Set or Found. Please edit your paths in the [url=/Content/Settings.xaml|_top]settings page[/url]" Width="441" Margin="0,186,0,185" VerticalAlignment="Center" Foreground="#FFFBF8F8" />
+            </DockPanel>
+            <DockPanel x:Name="ModsListPanel" Visibility="Hidden">
+                <Label Content="Launch Arma 2" FontWeight="Bold" Margin="3,3,0,-9" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Top"/>
+                <Button x:Name="ClearSelected" Content="Clear" Height="25" Width="62" HorizontalAlignment="Right" BorderThickness="0" Cursor="Hand" Margin="0,-10,195,-17" ToolTip="Clear Selected Mods" Background="#FFFDFCFC" BorderBrush="#FFFF0404" VerticalAlignment="Top" Foreground="Red" Click="ClearSelected_Click" DockPanel.Dock="Top">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="314" Opacity="0.2" ShadowDepth="1"/>
+                    </Button.Effect>
+                </Button>
+                <Button DockPanel.Dock="Top" Content="Refresh" Height="25" Width="81" HorizontalAlignment="Right" BorderThickness="0" Cursor="Hand" Margin="0,-10,100,-5" ToolTip="Refresh List" Background="#FFFDFCFC" BorderBrush="#FFFF0404" VerticalAlignment="Top" Foreground="Red" Click="Button_Click">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="314" Opacity="0.2" ShadowDepth="1"/>
+                    </Button.Effect>
+                </Button>
+                <Button DockPanel.Dock="Top" Content="Launch" Click="Launch_Click" Height="25" Width="85" HorizontalAlignment="Right" BorderThickness="5,0,0,0" Cursor="Hand" Margin="0,-20,0,0" ToolTip="Launch with Selected Mods" Background="#FF343434" BorderBrush="#FFFF0404" VerticalAlignment="Top" Foreground="#FFFFFEFE">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="314" Opacity="0.2" ShadowDepth="1"/>
+                    </Button.Effect>
+                </Button>
+                <ListBox ItemsSource="{Binding TheList}" Name="ModsLister" BorderThickness="0,1" Margin="0,10" BorderBrush="#FF3C3C3C">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding IsSelected}"  Content="{Binding TheText}" Tag="{Binding TheUrl}"  Click="CheckBox_Click" MouseRightButtonDown="CheckBox_MouseRightButtonDown" Cursor="Hand" ToolTip="Right Click to view Mod info from http://sync.austac.net.au"></CheckBox>
+                        </DataTemplate>
+
+                    </ListBox.ItemTemplate>
+
+                </ListBox>
+
+
+            </DockPanel>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="AusTacQuick2Launch.Content.Recent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Style="{StaticResource ContentRoot}">
+        <!-- TODO: set @SelectedSource -->
+        <mui:ModernTab Layout="List" SelectedSource="/Content/Arma2Recent.xaml">
+            <mui:ModernTab.Links>
+                <!-- TODO: set @Source -->
+                <mui:Link DisplayName="Arma 2 Launches" Source="/Content/Arma2Recent.xaml" />
+                <mui:Link DisplayName="Arma 3 Launches" Source="/Content/Arma3Recent.xaml"/>
+            </mui:ModernTab.Links>
+        </mui:ModernTab>
+    </Grid>
+</UserControl>

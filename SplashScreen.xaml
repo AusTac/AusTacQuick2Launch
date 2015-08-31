@@ -1,0 +1,61 @@
+﻿<Window 
+    x:Class="SplashDemo.SplashScreen"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SplashDemo"    
+    Height="70" Width="220" WindowStartupLocation="CenterScreen" 
+        Background="Black" BorderBrush="#333333" ShowInTaskbar="False" BorderThickness="1" ResizeMode="NoResize" AllowsTransparency="True" WindowStyle="None">
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation 
+                        Storyboard.TargetProperty="(Window.Opacity)"
+                        From="0.0" To="1.0" Duration="0:0:0.5"
+                        AutoReverse="False"/>
+                </Storyboard>
+            </BeginStoryboard>
+            <!--
+            <BeginStoryboard>
+                <Storyboard >
+                    <DoubleAnimation Duration="0:0:.2" Storyboard.TargetProperty="Left" From="700" To="710" AccelerationRatio=".1"/>
+                </Storyboard>
+            </BeginStoryboard>
+            
+            <BeginStoryboard>
+                <Storyboard >
+                    <DoubleAnimation Duration="0:0:.2" Storyboard.TargetProperty="Height" From="175" To="180" AccelerationRatio=".1"/>
+                </Storyboard>
+            </BeginStoryboard>
+            -->
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid>
+        <Label Name="label1" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Margin="92,11,60,33">
+            <Label.BitmapEffect>
+                <OuterGlowBitmapEffect GlowSize="15" />
+            </Label.BitmapEffect> [AusTac]
+        </Label>
+        <Image Source="Assets/LogoMainSmallJPG.jpg" Margin="-2,0,128,0" />
+        <Label Name="label3" FontSize="15" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#333333" FontStyle="Normal" Background="{x:Null}" Margin="95,28,19,10">
+            <Label.BitmapEffect>
+                <OuterGlowBitmapEffect GlowSize="15" />
+            </Label.BitmapEffect> Quick2Launch
+        </Label>
+        <TextBlock Name="version" FontSize="5" Foreground="#333333" Background="{x:Null}" Margin="108,72,88,41"/>
+        <TextBlock x:Name="label10" Margin="126,106,77,43" Foreground="Red" TextAlignment="Center" Opacity="0.8"  />
+        <TextBlock Height="18" Margin="132,0,0,50" Name="label2" VerticalAlignment="Bottom"
+               Text="{Binding Source={x:Static local:MessageListener.Instance},Path=Message}" Foreground="Black" HorizontalAlignment="Center" Width="86" TextAlignment="Center" FontSize="8"></TextBlock>
+        <ProgressBar Margin="103,52,4,6" Background="{x:Null}" IsIndeterminate="True" Foreground="White" RenderTransformOrigin="0.5,0.5" >
+            <ProgressBar.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.996"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-4.274"/>
+                </TransformGroup>
+            </ProgressBar.RenderTransform>
+        </ProgressBar>
+
+    </Grid>
+</Window>
