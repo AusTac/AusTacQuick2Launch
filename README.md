@@ -1,6 +1,8 @@
 
 # [AusTac] Quick2Launch Desktop App
 
+- Current Build: Alpha 0.0.1
+
 Windows desktop application for launching selected mods & paramters for the Arma gaming series. Combined support for both Arma 2 Operation arrowhead & Arma 3 with also on-the-fly repo & mods checking through the Play withSix application.
 
 
