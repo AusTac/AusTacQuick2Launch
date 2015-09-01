@@ -18,9 +18,9 @@ Windows desktop application for launching selected mods & paramters for the Arma
 - Logging & Debugging
 
 
-# Buit With
+# Built With
 
-- c#
+- C#
 - WPF
 - Visual Studio
 - FirstFloor.ModernUI
