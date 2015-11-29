@@ -1,9 +1,8 @@
 
-- Current Build: Alpha 0.0.0.1
 
 Windows desktop application for launching selected mods & paramters for the Arma gaming series. Combined support for both Arma 2 Operation arrowhead & Arma 3 with also on-the-fly repo & mods checking through the Play withSix application.
 
-- Latest EXE Build - http://sync.austac.net.au/quick2launch/setup.exe
+- Latest EXE Build - https://github.com/AusTac/AusTacQuick2Launch/tree/master/publish/setup.exe
 - Source Code - https://github.com/AusTac/AusTacQuick2Launch/archive/master.zip
 
 
@@ -11,7 +10,7 @@ Windows desktop application for launching selected mods & paramters for the Arma
 
 - Varoius parameter selections including IP & Port as well as password
 - Sync mod selection(s) with Play withSix
-- Fetch Mod data from [ausTac] Sync - http://sync.austac.net.au
+- Fetch Mod data from [AusTac] Sync - http://sync.austac.net.au
 - Application Auto Update
 - SaveTo Recent Launch Lists (WIP)
 - Import (via array or url) & Launch
