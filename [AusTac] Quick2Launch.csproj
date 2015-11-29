@@ -31,7 +31,7 @@
     <PublisherName>[AusTac]</PublisherName>
     <SuiteName>[AusTac] Desktop Apps</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
-    <WebPage>publish.html</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <TrustUrlParameters>true</TrustUrlParameters>
     <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>0.0.0.2</ApplicationVersion>
