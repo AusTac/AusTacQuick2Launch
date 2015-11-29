@@ -1,7 +1,7 @@
 
 Windows desktop application for launching selected mods & paramters for the Arma gaming series. Combined support for both Arma 2 Operation Arrowhead & Arma 3 with also on-the-fly repo & mods checking through the Play withSix application.
 
-- Latest EXE Build - https://github.com/AusTac/AusTacQuick2Launch/tree/master/publish/setup.exe
+- Latest EXE Build - http://sync.austac.net.au/quick2launch/setup.exe
 - Source Code - https://github.com/AusTac/AusTacQuick2Launch/archive/master.zip
 
 
