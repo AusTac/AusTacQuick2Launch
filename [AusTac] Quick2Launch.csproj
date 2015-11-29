@@ -13,7 +13,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>H:\Extensions\Under Dev\AusTacQuick2Launch\Build\</PublishUrl>
+    <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -31,7 +31,7 @@
     <PublisherName>[AusTac]</PublisherName>
     <SuiteName>[AusTac] Desktop Apps</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
-    <WebPage>publish.htm</WebPage>
+    <WebPage>publish.html</WebPage>
     <TrustUrlParameters>true</TrustUrlParameters>
     <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>0.0.0.2</ApplicationVersion>
