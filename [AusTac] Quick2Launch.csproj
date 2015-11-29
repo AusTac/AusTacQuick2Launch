@@ -23,8 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://sync.austac.net.au/quick2launch/</InstallUrl>
-    <UpdateUrl>http://sync.austac.net.au/quick2launch/</UpdateUrl>
+    <InstallUrl>https://github.com/AusTac/AusTacQuick2Launch/tree/master/publish/</InstallUrl>
+    <UpdateUrl>https://github.com/AusTac/AusTacQuick2Launch/tree/master/publish/</UpdateUrl>
     <SupportUrl>http://sync.austac.net.au/quick2launch#support</SupportUrl>
     <ErrorReportUrl>http://sync.austac.net.au/quick2launch#error</ErrorReportUrl>
     <ProductName>[AusTac] Quick2Launch</ProductName>
@@ -33,8 +33,8 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>1</ApplicationRevision>
-    <ApplicationVersion>0.0.0.1</ApplicationVersion>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>0.0.0.2</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -1157,6 +1157,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\add-to-pw6-btn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\LogoMainSmallJPG.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Content Include="AusTacQuick2Launch.ico" />

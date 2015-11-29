@@ -160,10 +160,11 @@ namespace AusTacQuick2Launch
             
             }
 
+
             if (AusTacQuick2Launch.Properties.Settings.Default.splash == true)
             {
                 //Splash Disabled
-                //run for a minute
+                //run for a 1 ms
                 for (int i = 0; i < 1; i++)
                 {
                     if (AusTacQuick2Launch.Properties.Settings.Default.debug == true)

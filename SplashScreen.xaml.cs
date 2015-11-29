@@ -45,6 +45,16 @@ namespace SplashDemo
             if (!Directory.Exists(AusTacQuick2Launch_RecentArma2)) Directory.CreateDirectory(AusTacQuick2Launch_RecentArma2);
             if (!Directory.Exists(AusTacQuick2Launch_RecentArma3)) Directory.CreateDirectory(AusTacQuick2Launch_RecentArma3);
             if (!Directory.Exists(AusTacQuick2Launch_PlaywithSix)) Directory.CreateDirectory(AusTacQuick2Launch_PlaywithSix);
+
+            if (AusTacQuick2Launch.Properties.Settings.Default.debug == true)
+            {
+                label2.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                label2.Visibility = Visibility.Hidden;
+            }
+
         }
 
     }
