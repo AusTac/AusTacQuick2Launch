@@ -23,8 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://sync.austac.net.au/quick2launch/</InstallUrl>
-    <UpdateUrl>http://sync.austac.net.au/quick2launch/</UpdateUrl>
+    <InstallUrl>https://raw.githubusercontent.com/AusTac/AusTacQuick2Launch/master/publish/</InstallUrl>
+    <UpdateUrl>https://raw.githubusercontent.com/AusTac/AusTacQuick2Launch/master/publish/</UpdateUrl>
     <SupportUrl>http://sync.austac.net.au/quick2launch#support</SupportUrl>
     <ErrorReportUrl>http://sync.austac.net.au/quick2launch#error</ErrorReportUrl>
     <ProductName>[AusTac] Quick2Launch</ProductName>
