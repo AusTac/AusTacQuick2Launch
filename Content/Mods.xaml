@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="AusTacQuick2Launch.Content.Servers"
+﻿<UserControl x:Class="AusTacQuick2Launch.Content.Mods"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -8,13 +8,12 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Style="{StaticResource ContentRoot}">
         <!-- TODO: set @SelectedSource -->
-        <mui:ModernTab Layout="List" x:Name="ServersTabs" SelectedSource="/Content/A3Servers.xaml">
+        <mui:ModernTab Layout="List" x:Name="ModsTabs" SelectedSource="/Content/A3Mods.xaml">
             <mui:ModernTab.Links>
                 <!-- TODO: set @Source -->
-                <mui:Link DisplayName="Arma 3 Servers" Source="/Content/A3Servers.xaml" />
-                <mui:Link DisplayName="Arma 2 Servers" Source="/Content/A2Servers.xaml"/>
-                <mui:Link DisplayName="Favorites" Source="/Content/FavServers.xaml"/>
-                <mui:Link DisplayName="Recent" Source="/Content/RecentServers.xaml"/>
+                <mui:Link DisplayName="Arma 3 Mods" Source="/Content/A3Mods.xaml" />
+                <mui:Link DisplayName="Arma 2 Mods" Source="/Content/A2Mods.xaml"/>
+                <mui:Link DisplayName="Favorites" Source="/Content/FavMods.xaml"/>
             </mui:ModernTab.Links>
         </mui:ModernTab>
     </Grid>

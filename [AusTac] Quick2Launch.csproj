@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AusTacQuick2Launch</RootNamespace>
-    <AssemblyName>[AusTac] Quick2Launch</AssemblyName>
+    <AssemblyName>[AusTac] Sync</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>true</IsWebBootstrapper>
@@ -23,18 +23,17 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://sync.austac.net.au/quick2launch/</InstallUrl>
-    <UpdateUrl>http://sync.austac.net.au/quick2launch/</UpdateUrl>
-    <SupportUrl>http://sync.austac.net.au/quick2launch#support</SupportUrl>
-    <ErrorReportUrl>http://sync.austac.net.au/quick2launch#error</ErrorReportUrl>
-    <ProductName>[AusTac] Quick2Launch</ProductName>
+    <InstallUrl>http://sync.seakecommerce.com/wpf/</InstallUrl>
+    <SupportUrl>http://sync.seakecommerce.com/wpf#support</SupportUrl>
+    <ErrorReportUrl>http://sync.seakecommerce.com/wpf#error</ErrorReportUrl>
+    <ProductName>[AusTac] Sync</ProductName>
     <PublisherName>[AusTac]</PublisherName>
     <SuiteName>[AusTac] Desktop Apps</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>0.0.0.2</ApplicationVersion>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>0.0.0.4</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -61,7 +60,7 @@
     <StartupObject>AusTacQuick2Launch.App</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>AusTacQuick2Launch.ico</ApplicationIcon>
+    <ApplicationIcon>Assets\AusTacQuick2Launch.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
@@ -130,6 +129,12 @@
     </Compile>
     <Compile Include="Content\Arma2Recent.xaml.cs">
       <DependentUpon>Arma2Recent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Mods.xaml.cs">
+      <DependentUpon>Mods.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Servers.xaml.cs">
+      <DependentUpon>Servers.xaml</DependentUpon>
     </Compile>
     <Compile Include="Content\DebugMisc.xaml.cs">
       <DependentUpon>DebugMisc.xaml</DependentUpon>
@@ -206,6 +211,14 @@
     <Page Include="Content\Arma2Recent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Content\Mods.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Content\Servers.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Content\DebugMisc.xaml">
       <SubType>Designer</SubType>
@@ -1160,6 +1173,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\LogoMainSmallJPG.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Ico.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Content Include="AusTacQuick2Launch.ico" />

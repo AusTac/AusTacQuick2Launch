@@ -517,7 +517,10 @@ namespace AusTacQuick2Launch.Content
             Process Process = new Process();
             string arma_3_path = AusTacQuick2Launch.Properties.Settings.Default.Arma3Path;
             string arma_3_mods_path = AusTacQuick2Launch.Properties.Settings.Default.Arma3ModsPath;
-            string arma_3_exe = "arma3.exe";
+
+            string arma_3_exe = "";
+            if (true == allow_battleeye.IsChecked) { arma_3_exe = "arma3battleye.exe"; } else { arma_3_exe = "arma3.exe"; }
+
             string mods = "-mod=";
             //string Arma3ExtrasOriginal = SteamFolder() + @"\SteamApps\Common\Arma 3;" + "expansion;";
             string Arma3Extras = "";

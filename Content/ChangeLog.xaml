@@ -11,6 +11,12 @@
             <StackPanel MinWidth="200">
                 <TextBlock Text="Change Log" Style="{StaticResource Heading2}" Margin="0,0,0,-7" Height="33" />
                 <Separator Margin="0,2,0,21" />
+                <TextBlock Text="Version 0.0.4 Alpha" Height="20" Width="626" FontWeight="Bold" />
+                <TextBlock Text="   - Version update" Height="35" Width="626" Margin="0,0,0,-4" />
+                <TextBlock Text="Version 0.0.3 Alpha" Height="20" Width="626" FontWeight="Bold" />
+                <TextBlock Text="   - Added BattleEye Launch options for Arma 2 and Arma 3" Height="40" Width="626" Margin="0,0,0,-4" />
+                <TextBlock Text="Version 0.0.2 Alpha" Height="20" Width="626" FontWeight="Bold" />
+                <TextBlock Text="   - Varoius Fixes" Height="38" Width="626" Margin="0,0,0,-4" />
                 <TextBlock Text="Version 0.0.1 Alpha" Height="20" Width="626" FontWeight="Bold" />
                 <TextBlock Text="   - Initial Alpha Release" Height="21" Width="626" Margin="0,0,0,-4" />
                 <TextBlock Text="   - Live Testing" Height="21" Width="626" Margin="0,0,0,9" />

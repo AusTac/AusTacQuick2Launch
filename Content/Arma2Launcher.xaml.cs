@@ -406,8 +406,69 @@ namespace AusTacQuick2Launch.Content
             timer.Tick += delegate(object sender, EventArgs e)
             {
                 ((DispatcherTimer)timer).Stop();
-                string arma_2_path = AusTacQuick2Launch.Properties.Settings.Default.Arma2Path;
-                string arma2oa_mods_folder = AusTacQuick2Launch.Properties.Settings.Default.Arma2ModsPath;
+                //string arma_2_path = AusTacQuick2Launch.Properties.Settings.Default.Arma2Path;
+                //string arma2oa_mods_folder = AusTacQuick2Launch.Properties.Settings.Default.Arma2ModsPath;
+                string appfolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                string AusTacQuick2Launch_Settings = System.IO.Path.Combine(appfolder, "AusTacQuick2Launch/Settings");
+
+                string arma_2_path_value = "";
+                try
+                {
+                    if (!System.IO.File.Exists(AusTacQuick2Launch_Settings + @"\Arma2Path.txt"))
+                    {
+                        arma_2_path_value = AusTacQuick2Launch.Properties.Settings.Default.Arma2Path;
+                    }
+                    else
+                    {
+                        arma_2_path_value = System.IO.File.ReadLines(AusTacQuick2Launch_Settings + @"\Arma2Path.txt").First();
+                    }
+                }
+                catch (Exception)
+                {
+                    // Fail silently
+                    //logging
+                    //string appfolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                    string AusTacQuick2Launch_Log = System.IO.Path.Combine(appfolder, "AusTacQuick2Launch/Log");
+                    using (StreamWriter sw = File.AppendText(AusTacQuick2Launch_Log + "/log.txt"))
+                    {
+                        string time = DateTime.Now.ToString();
+                        sw.WriteLine(time + " | Error Checking Arma 2 Path File");
+                    }
+                }
+
+                //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                string arma2_mods_folder_value = "";
+                try
+                {
+                    if (!System.IO.File.Exists(AusTacQuick2Launch_Settings + @"\Arma2ModsPath.txt"))
+                    {
+                        arma2_mods_folder_value = AusTacQuick2Launch.Properties.Settings.Default.Arma2ModsPath;
+                    }
+                    else
+                    {
+                        arma2_mods_folder_value = System.IO.File.ReadLines(AusTacQuick2Launch_Settings + @"\Arma2ModsPath.txt").First();
+                    }
+                }
+                catch (Exception)
+                {
+                    // Fail silently
+                    //logging
+                    //string appfolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                    string AusTacQuick2Launch_Log = System.IO.Path.Combine(appfolder, "AusTacQuick2Launch/Log");
+                    using (StreamWriter sw = File.AppendText(AusTacQuick2Launch_Log + "/log.txt"))
+                    {
+                        string time = DateTime.Now.ToString();
+                        sw.WriteLine(time + " | Error Checking Arma 2 Mods Path File");
+                    }
+                }
+
+                //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                string arma_2_path = arma_2_path_value;
+                string arma_2_mods_path = arma2_mods_folder_value;
+
+
                 try
                 {
                     // If the directory doesn't exist, create it.
@@ -419,7 +480,7 @@ namespace AusTacQuick2Launch.Content
                         //TheListOutput();
                         ModsListPanel.Visibility = Visibility.Hidden;
                         //logging
-                        string appfolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                        //string appfolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
                         string AusTacQuick2Launch_Log = System.IO.Path.Combine(appfolder, "AusTacQuick2Launch/Log");
                         using (StreamWriter sw = File.AppendText(AusTacQuick2Launch_Log + "/log.txt"))
                         {
@@ -438,7 +499,7 @@ namespace AusTacQuick2Launch.Content
                         ModsListPanel.Visibility = Visibility.Visible;
                         TheListOutput();
                         //logging
-                        string appfolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                        //string appfolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
                         string AusTacQuick2Launch_Log = System.IO.Path.Combine(appfolder, "AusTacQuick2Launch/Log");
                         using (StreamWriter sw = File.AppendText(AusTacQuick2Launch_Log + "/log.txt"))
                         {
@@ -455,7 +516,7 @@ namespace AusTacQuick2Launch.Content
                 {
                     // Fail silently
                     //logging
-                    string appfolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                    //string appfolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
                     string AusTacQuick2Launch_Log = System.IO.Path.Combine(appfolder, "AusTacQuick2Launch/Log");
                     using (StreamWriter sw = File.AppendText(AusTacQuick2Launch_Log + "/log.txt"))
                     {
@@ -515,9 +576,70 @@ namespace AusTacQuick2Launch.Content
             }
 
             Process Process = new Process();
-            string arma_2_path = AusTacQuick2Launch.Properties.Settings.Default.Arma2Path;
-            string arma_2_mods_path = AusTacQuick2Launch.Properties.Settings.Default.Arma2ModsPath;
-            string arma_2_exe = "ArmA2OA.exe";
+
+            string appfolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string AusTacQuick2Launch_Settings = System.IO.Path.Combine(appfolder, "AusTacQuick2Launch/Settings");
+            string arma_2_path_value = "";
+            try
+            {
+                if (!System.IO.File.Exists(AusTacQuick2Launch_Settings + @"\Arma2Path.txt"))
+                {
+                    arma_2_path_value = AusTacQuick2Launch.Properties.Settings.Default.Arma2Path;
+                }
+                else
+                {
+                    arma_2_path_value = System.IO.File.ReadLines(AusTacQuick2Launch_Settings + @"\Arma2Path.txt").First();
+                }
+            }
+            catch (Exception)
+            {
+                // Fail silently
+                //logging
+                //string appfolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                string AusTacQuick2Launch_Log = System.IO.Path.Combine(appfolder, "AusTacQuick2Launch/Log");
+                using (StreamWriter sw = File.AppendText(AusTacQuick2Launch_Log + "/log.txt"))
+                {
+                    string time = DateTime.Now.ToString();
+                    sw.WriteLine(time + " | Error Checking Arma 2 Path File");
+                }
+            }
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            string arma2_mods_folder_value = "";
+            try
+            {
+                if (!System.IO.File.Exists(AusTacQuick2Launch_Settings + @"\Arma2ModsPath.txt"))
+                {
+                    arma2_mods_folder_value = AusTacQuick2Launch.Properties.Settings.Default.Arma2ModsPath;
+                }
+                else
+                {
+                    arma2_mods_folder_value = System.IO.File.ReadLines(AusTacQuick2Launch_Settings + @"\Arma2ModsPath.txt").First();
+                }
+            }
+            catch (Exception)
+            {
+                // Fail silently
+                //logging
+                //string appfolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                string AusTacQuick2Launch_Log = System.IO.Path.Combine(appfolder, "AusTacQuick2Launch/Log");
+                using (StreamWriter sw = File.AppendText(AusTacQuick2Launch_Log + "/log.txt"))
+                {
+                    string time = DateTime.Now.ToString();
+                    sw.WriteLine(time + " | Error Checking Arma 2 Mods Path File");
+                }
+            }
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            string arma_2_path = arma_2_path_value;
+            string arma_2_mods_path = arma2_mods_folder_value;
+
+            string arma_2_exe = "";
+            if (true == allow_battleye.IsChecked) { arma_2_exe = "ArmA2OA_BE.exe"; } else { arma_2_exe = "ArmA2OA.exe"; }
+
+
             string mods = "-mod=";
             string Arma2ExtrasOriginal = SteamFolder() + @"\SteamApps\Common\Arma 2;" + SteamFolder() + @"\SteamApps\Common\Arma 2 operation arrowhead;" + "expansion;";
             string Arma2Extras = "";
@@ -624,9 +746,9 @@ namespace AusTacQuick2Launch.Content
 
 
             //logging
-            string appfolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            string AusTacQuick2Launch_Log = System.IO.Path.Combine(appfolder, "AusTacQuick2Launch/Log");
-            using (StreamWriter sw = File.AppendText(AusTacQuick2Launch_Log + "/log.txt"))
+            //string appfolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string AusTacQuick2Launch_Log2 = System.IO.Path.Combine(appfolder, "AusTacQuick2Launch/Log");
+            using (StreamWriter sw = File.AppendText(AusTacQuick2Launch_Log2 + "/log.txt"))
             {
                 string time = DateTime.Now.ToString();
                 sw.WriteLine(time + " | Launching Arma 2 with Params: " + Process.StartInfo.Arguments);

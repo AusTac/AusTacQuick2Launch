@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="AusTacQuick2Launch.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <userSettings>
+        <AusTacQuick2Launch.Properties.Settings>
+            <setting name="Arma2Path" serializeAs="String">
+                <value>C:\\Program Files (x86)\Steam\SteamApps\common\arma 2 operation arrowhead</value>
+            </setting>
+            <setting name="Arma2ModsPath" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="Arma3Path" serializeAs="String">
+                <value>C:\\Program Files (x86)\Steam\SteamApps\common\Arma 3</value>
+            </setting>
+            <setting name="Arma3ModsPath" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="firstrun" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="debug" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="BaseDir" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="AppDir" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="splash" serializeAs="String">
+                <value>False</value>
+            </setting>
+        </AusTacQuick2Launch.Properties.Settings>
+    </userSettings>
+</configuration>

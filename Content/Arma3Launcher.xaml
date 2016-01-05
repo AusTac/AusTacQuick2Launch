@@ -18,32 +18,32 @@
         <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Height="377" Width="195" Margin="-13,0,0,0">
 
             <TextBlock Text="Launch Settings" Style="{StaticResource Heading2}" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Top" />
-            <CheckBox x:Name="launch_setting_nosplash" IsChecked="False" Cursor="Hand" ToolTip="Disables splash screens"  HorizontalAlignment="Left" VerticalAlignment="Top" Content="No Splash Screen" Width="138" Margin="0,22,0,0" />
-            <CheckBox x:Name="launch_setting_scripterrors" IsChecked="False" Cursor="Hand" ToolTip="Show errors in scripts on-screen" Content="Show Script Errors" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,44,0,0" />
-            <CheckBox x:Name="launch_setting_intro" IsChecked="False" Cursor="Hand" ToolTip="Disables world intros in the main menu" Content="No Intro" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,66,0,0" />
-            <CheckBox x:Name="launch_setting_nopause" IsChecked="False" Cursor="Hand" ToolTip="Allow the game running even when its window does not have focus (i.e. running in the background) " Content="No Pause" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,88,0,0" />
-            <Separator Margin="0,105,0,250" Background="#FF3C3C3C"/>
+            <CheckBox x:Name="allow_battleeye" IsChecked="False" Cursor="Hand" ToolTip="Launch Arma 3 with BattleEye"  HorizontalAlignment="Left" VerticalAlignment="Top" Content="Launch with BattleEye" Width="158" Margin="0,22,0,0" />
+            <CheckBox x:Name="launch_setting_nosplash" IsChecked="False" Cursor="Hand" ToolTip="Disables splash screens"  HorizontalAlignment="Left" VerticalAlignment="Top" Content="No Splash Screen" Width="138" Margin="0,44,0,0" />
+            <CheckBox x:Name="launch_setting_scripterrors" IsChecked="False" Cursor="Hand" ToolTip="Show errors in scripts on-screen" Content="Show Script Errors" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,66,0,0" />
+            <CheckBox x:Name="launch_setting_intro" IsChecked="False" Cursor="Hand" ToolTip="Disables world intros in the main menu" Content="No Intro" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,88,0,0" />
+            <CheckBox x:Name="launch_setting_nopause" IsChecked="False" Cursor="Hand" ToolTip="Allow the game running even when its window does not have focus (i.e. running in the background) " Content="No Pause" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,110,0,0" />
+            <Separator Margin="0,130,0,225" Background="#FF3C3C3C"/>
 
-            <Separator Margin="0,218,0,149" Background="#FF3C3C3C"/>
-            <TextBlock Text="Connect" Margin="2,120,73,244" Style="{StaticResource Heading2}" FontSize="12" />
-            <TextBox x:Name="ip_address" Width="120" Margin="2,138,73,215" />
-            <TextBlock Text="IP Address" Margin="2,162,143,202" Style="{StaticResource Heading2}" FontSize="8" />
+            <Separator Margin="0,243,0,124" Background="#FF3C3C3C"/>
+            <TextBlock Text="Connect" Margin="2,145,73,219" Style="{StaticResource Heading2}" FontSize="12" />
+            <TextBox x:Name="ip_address" Width="120" Margin="2,163,73,190" />
+            <TextBlock Text="IP Address" Margin="2,187,143,177" Style="{StaticResource Heading2}" FontSize="8" />
             <TextBlock Text=":" Margin="127,136,63,217"  FontSize="18" />
-            <TextBox x:Name="port_address" Margin="137,138,10,215" />
-            <TextBlock Text="Port" Margin="137,162,29,202" Style="{StaticResource Heading2}" FontSize="8" />
-            <PasswordBox x:Name="password" Margin="2,180,10,173" />
-            <TextBlock Text="Password" Margin="2,205,143,159" Style="{StaticResource Heading2}" FontSize="8" />
+            <TextBox x:Name="port_address" Margin="137,163,10,190" />
+            <TextBlock Text="Port" Margin="137,187,29,177" Style="{StaticResource Heading2}" FontSize="8" />
+            <PasswordBox x:Name="password" Margin="2,205,10,148" />
+            <TextBlock Text="Password" Margin="2,230,143,134" Style="{StaticResource Heading2}" FontSize="8" />
 
-            <CheckBox x:Name="launch_setting_allowrecent" IsChecked="False" Cursor="Hand" ToolTip="Save current Launch Params and Selected Mods to Recent List after launch" Content="Save to Recent" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,233,0,0" />
-            <Separator Margin="0,249,0,107" Background="#FF3C3C3C"/>
-            <TextBlock Text="After Launch" Margin="0,270,10,89" Style="{StaticResource Heading2}" FontSize="12" />
-            <RadioButton Content="Minimize to Tray"  GroupName="AfterLaunchSelect" Height="24" HorizontalAlignment="Left"  Name="AfterLaunchMinimizeselected" VerticalAlignment="Top" Width="140" Cursor="Hand" ToolTip="Minimize Application after Launch" Margin="0,288,0,0" IsChecked="True" />
-            <RadioButton Content="Close Application" GroupName="AfterLaunchSelect" Height="22" HorizontalAlignment="Left"  Name="AfterLaunchCloseselected" VerticalAlignment="Top" Width="136" Cursor="Hand" ToolTip="Close Application after Launch" Margin="0,312,0,0" />
-            <Separator Margin="0,339,0,8" Background="#FF3C3C3C"/>
+            <CheckBox x:Name="launch_setting_allowrecent" IsChecked="False" Cursor="Hand" ToolTip="Save current Launch Params and Selected Mods to Recent List after launch" Content="Save to Recent" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,258,0,0" />
+            <Separator Margin="0,274,0,82" Background="#FF3C3C3C"/>
+            <TextBlock Text="After Launch" Margin="0,295,10,64" Style="{StaticResource Heading2}" FontSize="12" />
+            <RadioButton Content="Minimize to Tray"  GroupName="AfterLaunchSelect" Height="24" HorizontalAlignment="Left"  Name="AfterLaunchMinimizeselected" VerticalAlignment="Top" Width="140" Cursor="Hand" ToolTip="Minimize Application after Launch" Margin="0,313,0,0" IsChecked="True" />
+            <RadioButton Content="Close Application" GroupName="AfterLaunchSelect" Height="22" HorizontalAlignment="Left"  Name="AfterLaunchCloseselected" VerticalAlignment="Top" Width="136" Cursor="Hand" ToolTip="Close Application after Launch" Margin="0,337,0,0" />
+            <Separator Margin="0,364,0,-17" Background="#FF3C3C3C"/>
 
-            <Button x:Name="pw6" Height="25" Margin="10,365,8,-13" Foreground="White" Cursor="Hand" Content="Check with Play withSix" IsCancel="True" ToolTip="Add selected mods to Play withSix to check for updates, diagnostics etc" BorderBrush="#FF008AFD" Background="#FF015CFB" Click="pw6_Click"/>
+            <Button x:Name="pw6" Height="25" Margin="10,390,8,-38" Foreground="White" Cursor="Hand" Content="Check with Play withSix" IsCancel="True" ToolTip="Add selected mods to Play withSix to check for updates, diagnostics etc" BorderBrush="#FF008AFD" Background="#FF015CFB" Click="pw6_Click"/>
             <ProgressBar x:Name="pw6_loading" Height="25" Margin="10,365,8,-13" IsIndeterminate="True" Background="#00000000" Foreground="#FF0146FD" Visibility="Hidden"/>
-            <Separator Margin="0,390,0,-41" Background="#FF3C3C3C"/>
             <ScrollViewer MinHeight="0" Height="160" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="Hidden">
                 <ListBox x:Name="ModsListBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="0"/>
             </ScrollViewer>

@@ -6,11 +6,11 @@ using System.Windows.Media;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("[AusTac] Quick2Launch")]
+[assembly: AssemblyTitle("[AusTac] Sync")]
 [assembly: AssemblyDescription("Launcher application for Arma 2 & Arma 3")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("[AusTac]")]
-[assembly: AssemblyProduct("[AusTac] Quick2Launch")]
+[assembly: AssemblyProduct("[AusTac] Sync")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
