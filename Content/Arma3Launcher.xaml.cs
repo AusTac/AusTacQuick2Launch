@@ -550,13 +550,49 @@ namespace AusTacQuick2Launch.Content
             if (true == launch_setting_nopause.IsChecked) { nopause = "-noPause"; }
 
 
-            Process.StartInfo.Arguments = ip_address_connect + port_address_connect + password_connect + '"' + mods + Arma3Extras + app_ouput + '"' + nosplash + scripterrors + nopause + intro;
-            //Process.StartInfo.Arguments = scripterrors;
-            string combined = System.IO.Path.Combine(arma_3_path, arma_3_exe);
-            Process.StartInfo.FileName = combined;
-            Process.Start();
-            //string launchparams = "steam://run/33930//" + mods + Arma2Extras + app_ouput + nosplash + scripterrors + nopause + intro;
-            //System.Diagnostics.Process.Start(launchparams);
+            if (true == allow_steamurl.IsChecked)
+            {
+                string steamPath = "";
+                RegistryKey steamkey = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Wow6432Node\Valve\Steam");
+                if (steamkey != null) { steamPath = steamkey.GetValue("installPath").ToString() + "\\steam.exe"; }
+
+                Process.StartInfo.Arguments = "-applaunch 107410 " + ip_address_connect + port_address_connect + password_connect + '"' + mods + Arma3Extras + app_ouput + '"' + nosplash + scripterrors + nopause + intro;
+                Process.StartInfo.FileName = steamPath;
+
+
+                try { Process.Start(); }
+
+                catch (Exception)
+                {
+                    var wnd = new FirstFloor.ModernUI.Windows.Controls.ModernWindow
+                    {
+
+
+                        Style = (Style)App.Current.Resources["BlankWindow"],
+                        Title = "Error",
+                        Topmost = true,
+
+                        IsTitleVisible = true,
+                        Content = "Can't launch Game using Steam URL Paramters.",
+                        Width = 510,
+                        Height = 510
+                    };
+                    wnd.ResizeMode = ResizeMode.NoResize;
+                    wnd.Show();
+                }
+
+
+
+            }
+            else
+            {
+
+                //Launch using Arma EXE
+                Process.StartInfo.Arguments = ip_address_connect + port_address_connect + password_connect + '"' + mods + Arma3Extras + app_ouput + '"' + nosplash + scripterrors + nopause + intro;
+                string combined = System.IO.Path.Combine(arma_3_path, arma_3_exe);
+                Process.StartInfo.FileName = combined;
+                Process.Start();
+            }
             
             
             /*

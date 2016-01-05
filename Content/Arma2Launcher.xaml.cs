@@ -637,7 +637,7 @@ namespace AusTacQuick2Launch.Content
             string arma_2_mods_path = arma2_mods_folder_value;
 
             string arma_2_exe = "";
-            if (true == allow_battleye.IsChecked) { arma_2_exe = "ArmA2OA_BE.exe"; } else { arma_2_exe = "ArmA2OA.exe"; }
+            if(true == allow_battleye.IsChecked) { arma_2_exe = "ArmA2OA_BE.exe"; } else { arma_2_exe = "ArmA2OA.exe"; }
 
 
             string mods = "-mod=";
@@ -724,12 +724,49 @@ namespace AusTacQuick2Launch.Content
             string nopause = "";
             if (true == launch_setting_nopause.IsChecked) { nopause = "-noPause"; }
 
+            if (true == allow_steamurl.IsChecked){
+                string steamPath = "";
+                RegistryKey steamkey = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Wow6432Node\Valve\Steam");
+                if (steamkey != null){steamPath = steamkey.GetValue("installPath").ToString() + "\\steam.exe";}
 
+               //string steamurl = steamPath +  "-applaunch 33930 " + Process.StartInfo.Arguments;
+               //string app_params = ip_address_connect + port_address_connect + password_connect + '"' + mods + Arma2Extras + app_ouput + '"' + nosplash + scripterrors + nopause + intro;
+               //string steamurl = "steam://run/33930//" + app_params;
+                Process.StartInfo.Arguments = "-applaunch 33930 " + ip_address_connect + port_address_connect + password_connect + '"' + mods + Arma2Extras + app_ouput + '"' + nosplash + scripterrors + nopause + intro;
+                Process.StartInfo.FileName = steamPath;
+
+
+                try { Process.Start(); }
+
+            catch (Exception)
+            {
+                var wnd = new FirstFloor.ModernUI.Windows.Controls.ModernWindow
+                {
+
+
+                    Style = (Style)App.Current.Resources["BlankWindow"],
+                    Title = "Error",
+                    Topmost = true,
+
+                    IsTitleVisible = true,
+                    Content = "Can't launch Game using Steam URL Paramters.",
+                    Width = 510,
+                    Height = 510
+                };
+                wnd.ResizeMode = ResizeMode.NoResize;
+                wnd.Show();
+            }
+             
+
+
+            }else{
+
+            //Launch using Arma EXE
             Process.StartInfo.Arguments = ip_address_connect + port_address_connect + password_connect + '"' + mods + Arma2Extras + app_ouput + '"' + nosplash + scripterrors + nopause + intro;
-            //Process.StartInfo.Arguments = scripterrors;
             string combined = System.IO.Path.Combine(arma_2_path, arma_2_exe);
             Process.StartInfo.FileName = combined;
             Process.Start();
+            }
             //string launchparams = "steam://run/33930//" + mods + Arma2Extras + app_ouput + nosplash + scripterrors + nopause + intro;
             //System.Diagnostics.Process.Start(launchparams);
             
@@ -956,7 +993,7 @@ namespace AusTacQuick2Launch.Content
             CheckBox cb = sender as CheckBox;
             string data = "0";
             
-            string urlAddress = "http://sync.austac.net.au/xapi/generate?collection_type=mods&type=xml&limit=all&mod_packagename=" + cb.Tag;
+            string urlAddress = "http://sync.seakecommerce.com/xapi/generate?collection_type=mods&type=xml&limit=all&mod_packagename=" + cb.Tag;
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(urlAddress);
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
@@ -1491,7 +1528,7 @@ namespace AusTacQuick2Launch.Content
              string set_game = "&game_id=arma2co";
              string set_mods = "&mods_array=" + app_ouput;
              string set_name = "&collection_name=AusTac Quick2Launch Mods Check";
-             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://sync.austac.net.au/wpf/uploads/quick2launch/index.php?" + set_user + set_game + set_name + set_mods);
+             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://sync.seakecommerce.com/wpf/uploads/quick2launch/index.php?" + set_user + set_game + set_name + set_mods);
              HttpWebResponse response = (HttpWebResponse)request.GetResponse();
              if (response.StatusCode == HttpStatusCode.OK)
              {
