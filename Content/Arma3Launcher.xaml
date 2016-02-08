@@ -57,6 +57,8 @@
             </DockPanel>
             <DockPanel x:Name="panelhide" Panel.ZIndex="99">
                 <ProgressBar HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" IsIndeterminate="True" Foreground="#FFFB0101" BorderBrush="#FFFF0202" />
+
+                <Image Source="/[AusTac] Sync;component/Assets/loader.gif" Stretch="None" />
             </DockPanel>
             <DockPanel x:Name="panelnofile" Panel.ZIndex="98">
                 <!--<TextBlock Text="No Arma 2 Folder Set or Found. Please edit your paths in the settings page" Width="572" Margin="0,0,0,0" VerticalAlignment="Center" />-->
