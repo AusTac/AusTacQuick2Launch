@@ -1178,6 +1178,9 @@
     <Resource Include="Assets\Ico.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\loader.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="AusTacQuick2Launch.ico" />
   </ItemGroup>
   <ItemGroup>

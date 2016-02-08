@@ -18,7 +18,7 @@
         <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Height="377" Width="195" Margin="-13,0,0,0">
 
             <TextBlock Text="Launch Settings" Style="{StaticResource Heading2}" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Top" />
-            <CheckBox  x:Name="allow_steamurl" Cursor="Hand" ToolTip="Launch using Steam URL" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Launch using Steam URL" Width="185" Margin="0,22,0,0"/>
+            <CheckBox  x:Name="allow_steamurl" Cursor="Hand" ToolTip="Launch using Steam" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Launch using Steam" Width="185" Margin="0,22,0,0" IsChecked="True"/>
             <CheckBox  x:Name="allow_battleye" Cursor="Hand" ToolTip="Launch with BattleEye Enabled" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Launch with BattleEye" Width="185" Margin="0,44,0,0"/>
             <CheckBox x:Name="launch_setting_nosplash" IsChecked="False" Cursor="Hand" ToolTip="Disables splash screens"  HorizontalAlignment="Left" VerticalAlignment="Top" Content="No Splash Screen" Width="138" Margin="0,66,0,0" />
             <CheckBox x:Name="launch_setting_scripterrors" IsChecked="False" Cursor="Hand" ToolTip="Show errors in scripts on-screen" Content="Show Script Errors" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,88,0,0" />
