@@ -2,14 +2,14 @@
                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                   xmlns:mui="http://firstfloorsoftware.com/ModernUI"
-                  Title="[AusTac] Sync (Alpha 0.0.0.4)"
+                  Title="[AusTac] Sync (Alpha 0.0.0.5)"
                   BorderThickness="1"
                   IsTitleVisible="True"
                   MinHeight="580"
-                  MaxHeight="580"
+                  MaxHeight="1580"
                   Height="580"
                   MinWidth="980"
-                  MaxWidth="980"
+                  MaxWidth="1980"
                   Width="980"
                   ShowInTaskbar="True"
                   WindowStartupLocation="CenterScreen"
@@ -26,9 +26,9 @@
                 <mui:Link DisplayName="Launch Arma 3" Source="/Content/Arma3Launcher.xaml" />
                 <mui:Link DisplayName="Mods" Source="/Content/Mods.xaml" />
                 <mui:Link DisplayName="Servers" Source="/Content/Servers.xaml" />
-                <mui:Link DisplayName="Recent" Source="/Content/Recent.xaml" />
-                <mui:Link DisplayName="Import" Source="/Content/ImportExport.xaml" />
-                <mui:Link DisplayName="Settings" Source="/Content/Settings.xaml" />
+                <mui:Link DisplayName="Repos" Source="/Content/Repos.xaml" />
+                <mui:Link DisplayName="Tools" Source="/Content/Tools.xaml" />
+                <mui:Link DisplayName="Settings" Source="/Content/SettingsPage.xaml" />
                 <mui:Link DisplayName="Debug" Source="/Content/Debug.xaml" />
                 <mui:Link DisplayName="Help" Source="/Content/Help.xaml" />
                 <mui:Link DisplayName="About" Source="/Content/About.xaml" />

@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             xmlns:gif="http://wpfanimatedgif.codeplex.com"
              mc:Ignorable="d"
              d:DesignHeight="596" d:DesignWidth="889">
 
@@ -53,13 +54,12 @@
         <Grid Grid.Column="6" Margin="{StaticResource SplitRight}" >
             <DockPanel x:Name="panelclosing" Panel.ZIndex="99" Visibility="Hidden">
                 <mui:BBCodeBlock BBCode="Shutting Down Application.." Width="258" Margin="81,160,0,211" VerticalAlignment="Center" Foreground="#FFFBF8F8" HorizontalAlignment="Center" TextAlignment="Center" />
-                <ProgressBar HorizontalAlignment="Center" VerticalAlignment="Center" Width="136" IsIndeterminate="True" Foreground="#FFFB0101" BorderBrush="#FFFF0202" Margin="-420,192,0,191" />
+                <Image gif:ImageBehavior.AnimatedSource="/[AusTac] Sync;component/Assets/loader.gif" Stretch="None" Width="608" />
             </DockPanel>
             <DockPanel x:Name="panelhide" Panel.ZIndex="99">
-                <ProgressBar HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" IsIndeterminate="True" Foreground="#FFFB0101" BorderBrush="#FFFF0202" />
+                <Image gif:ImageBehavior.AnimatedSource="/[AusTac] Sync;component/Assets/loader.gif" Stretch="None" Width="608" />
             </DockPanel>
             <DockPanel x:Name="panelnofile" Panel.ZIndex="98">
-                <!--<TextBlock Text="No Arma 2 Folder Set or Found. Please edit your paths in the settings page" Width="572" Margin="0,0,0,0" VerticalAlignment="Center" />-->
                 <mui:BBCodeBlock BBCode="Arma 2 Folder Not Set or Found. Please edit your paths in the [url=/Content/Settings.xaml|_top]settings page[/url]" Width="441" Margin="0,186,0,185" VerticalAlignment="Center" Foreground="#FFFBF8F8" />
             </DockPanel>
             <DockPanel x:Name="ModsListPanel" Visibility="Hidden">

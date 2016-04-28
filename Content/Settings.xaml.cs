@@ -473,7 +473,6 @@ namespace AusTacQuick2Launch.Content
                 ((DispatcherTimer)timer).Stop();
                 SaveButton.Visibility = Visibility.Visible;
                 onclick_progress.Visibility = Visibility.Hidden;
-                RestartButton.Visibility = Visibility.Visible;
             };
 
             timer.Start();
@@ -541,7 +540,6 @@ namespace AusTacQuick2Launch.Content
 
             SaveButton.Visibility = Visibility.Hidden;
             onclick_progress.Visibility = Visibility.Visible;
-            RestartButton.Visibility = Visibility.Hidden;
 
             showProgress();
             AusTacQuick2Launch.Properties.Settings.Default.Save();
