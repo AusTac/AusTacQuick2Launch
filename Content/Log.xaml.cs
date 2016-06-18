@@ -65,6 +65,8 @@ namespace AusTacQuick2Launch.Content
 
             if (System.IO.File.Exists(AusTacQuick2Launch_Log + "/log.txt"))
             {
+                
+                
                 // Use a try block to catch IOExceptions, to 
                 // handle the case of the file already being 
                 // opened by another process. 

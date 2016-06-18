@@ -465,7 +465,7 @@ namespace AusTacQuick2Launch.Content
 
             DispatcherTimer timer = new DispatcherTimer()
             {
-                Interval = TimeSpan.FromSeconds(3)
+                Interval = TimeSpan.FromSeconds(2)
             };
 
             timer.Tick += delegate(object sender, EventArgs e)
